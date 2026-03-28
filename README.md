@@ -2,13 +2,13 @@
 
 This project implements a **non-uniform quad patching and stitching** pipeline for ROI-focused image processing. It divides an image into quads (patches), applies distance-based scaling, stitches them with varying sizes, cleans up the result through bounding box detection, cropping, inpainting, and finally reconstructs a high-quality output image.
 
-The pipeline is particularly useful for medical imaging, satellite imagery, or any domain where the Region of Interest (ROI) needs special emphasis while maintaining contextual background.
+The pipeline is particularly useful for medical imaging, or any domain where the Region of Interest (ROI) needs special emphasis while maintaining contextual background.
 
 ## Files Overview
 
 | File       | Purpose |
 |-----------|--------|
-| `1.py`    | Main preprocessing script: Draws layered quads around ROI, extracts & saves individual quads, computes distance-based scaling factors for each quad. |
+| `1.py`    | Draws layered quads around ROI, extracts & saves individual quads, computes distance-based scaling factors for each quad. |
 | `2.py`    | Alternative quad drawing & stitching version. Loads saved quads and stitches them into a single image using scaling factors. |
 | `3.py`    | Post-stitching: Draws convex hull bounding box around the stitched content and saves the result (`W2.png`). |
 | `4.py`    | Bounding box + Inpainting: Cleans black areas inside the hull using Telea inpainting (`W3.png`). |
@@ -49,9 +49,9 @@ pip install numpy opencv-python matplotlib
 
 1. **Prepare your data**
    - Place your input image in:  
-     `Sri Lanka_Dataset/images/S-181-01.jpg`
+     `Dataset/images/S-181-01.jpg`
    - Place corresponding mask in:  
-     `Sri Lanka_Dataset/masks/S-181-01.png`
+     `Dataset/masks/S-181-01.png`
 
 2. **Run the pipeline in order:**
 
